@@ -1,0 +1,166 @@
+
+------------------------------------------------------------
+Root project 'ACMclassifier'
+------------------------------------------------------------
+
+allprojects: [root project 'ACMclassifier']
+ant: org.gradle.api.internal.project.DefaultAntBuilder@6ff6e3ac
+antBuilderFactory: org.gradle.api.internal.project.DefaultAntBuilderFactory@2af47036
+application: extension 'application'
+applicationDefaultJvmArgs: []
+applicationDistribution: org.gradle.api.internal.file.copy.DefaultCopySpec_Decorated@3bad45dc
+applicationName: ACMclassifier
+archivesBaseName: ACMclassifier
+artifacts: org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler_Decorated@1b1459b6
+asDynamicObject: DynamicObject for root project 'ACMclassifier'
+autoTargetJvmDisabled: false
+bake: task ':bake'
+base: extension 'base'
+baseClassLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@43a732fb
+buildDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build
+buildFile: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build.gradle
+buildHomePage: task ':buildHomePage'
+buildPath: :
+buildScriptSource: org.gradle.groovy.scripts.TextResourceScriptSource@4adb8f79
+buildSite: task ':buildSite'
+buildscript: org.gradle.api.internal.initialization.DefaultScriptHandler@1b89a05b
+check: task ':check'
+childProjects: {}
+class: class org.gradle.api.internal.project.DefaultProject_Decorated
+classLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@6de0798e
+classes: task ':classes'
+clean: task ':clean'
+clearPages: task ':clearPages'
+clonePagesRepo: task ':clonePagesRepo'
+compileJava: task ':compileJava'
+compileTestJava: task ':compileTestJava'
+components: SoftwareComponentInternal set
+configurationActions: org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@22e98375
+configurationTargetIdentifier: org.gradle.configuration.ConfigurationTargetIdentifier$1@58a35d39
+configurations: configuration container
+convention: org.gradle.internal.extensibility.DefaultConvention@4e95b113
+copyDocs: task ':copyDocs'
+copyDoxygen: task ':copyDoxygen'
+copyJBakePagesForUse: task ':copyJBakePagesForUse'
+copyJDocs: task ':copyJDocs'
+copyJbakeTemplates: task ':copyJbakeTemplates'
+copyReports: task ':copyReports'
+createDoxygenTemplates: task ':createDoxygenTemplates'
+crossProjectModelAccess: org.gradle.api.internal.project.DefaultCrossProjectModelAccess@18c85be2
+defaultArtifacts: extension 'defaultArtifacts'
+defaultTasks: []
+deferredProjectConfiguration: org.gradle.api.internal.project.DeferredProjectConfiguration@765481a5
+dependencies: org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler_Decorated@345c50c3
+dependencyLocking: org.gradle.internal.locking.DefaultDependencyLockingHandler_Decorated@57226272
+dependencyMetaDataProvider: org.gradle.internal.service.scopes.ProjectScopeServices$ProjectBackedModuleMetaDataProvider@d6f343f
+dependencyReport: task ':dependencyReport'
+depth: 0
+description: null
+detachedState: false
+displayName: root project 'ACMclassifier'
+distTar: task ':distTar'
+distZip: task ':distZip'
+distributions: Distribution container
+distsDirName: distributions
+distsDirectory: extension 'base' property 'distsDirectory'
+docsDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build/docs
+docsDirName: docs
+doxygen: task ':doxygen'
+eclipse: extension 'eclipse'
+executableDir: bin
+ext: org.gradle.internal.extensibility.DefaultExtraPropertiesExtension@5fe4c59e
+extensions: org.gradle.internal.extensibility.DefaultConvention@4e95b113
+fileOperations: org.gradle.api.internal.file.DefaultFileOperations@9e84ce9
+fileResolver: org.gradle.api.internal.file.BaseDirFileResolver@4d9d8e54
+gradle: build 'ACMclassifier'
+group: 
+htmlDependencyReport: task ':htmlDependencyReport'
+identityPath: :
+inheritedScope: org.gradle.internal.extensibility.ExtensibleDynamicObject$InheritedDynamicObject@39278514
+internalStatus: property(java.lang.Object, fixed(class java.lang.String, integration))
+jacoco: extension 'jacoco'
+jacocoTestReport: task ':jacocoTestReport'
+jar: task ':jar'
+java: extension 'java'
+javaToolchains: extension 'javaToolchains'
+javadoc: task ':javadoc'
+jbake: extension 'jbake'
+layout: org.gradle.api.internal.file.DefaultProjectLayout@40167f9b
+libsDirName: libs
+libsDirectory: extension 'base' property 'libsDirectory'
+listenerBuildOperationDecorator: org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator@bd2ec74
+logger: org.gradle.internal.logging.slf4j.OutputEventListenerBackedLogger@406af934
+logging: org.gradle.internal.logging.services.DefaultLoggingManager@2a9c3c74
+mainClassName: null
+mergeCoverageReports: task ':mergeCoverageReports'
+mergedJacocoReportHTML: task ':mergedJacocoReportHTML'
+model: root project 'ACMclassifier'
+modelIdentityDisplayName: null
+modelRegistry: org.gradle.model.internal.registry.DefaultModelRegistry@2f961316
+name: ACMclassifier
+normalization: org.gradle.normalization.internal.DefaultInputNormalizationHandler_Decorated@5c0f5bd8
+objects: org.gradle.api.internal.model.DefaultObjectFactory@40a2ad61
+owner: root project 'ACMclassifier'
+parent: null
+parentIdentifier: null
+path: :
+pluginContext: false
+pluginManager: org.gradle.api.internal.plugins.DefaultPluginManager_Decorated@b16469d
+plugins: [org.gradle.api.plugins.HelpTasksPlugin@663a444d, org.gradle.buildinit.plugins.BuildInitPlugin@724dc774, org.gradle.buildinit.plugins.WrapperPlugin@6302a668, org.gradle.language.base.plugins.LifecycleBasePlugin@50f9c9a7, org.gradle.api.plugins.BasePlugin@6e8537bb, org.gradle.api.plugins.JvmEcosystemPlugin@64d623d1, org.gradle.api.plugins.ReportingBasePlugin@118f1818, org.gradle.api.plugins.JavaBasePlugin$Inject@6ac99488, org.gradle.testing.base.plugins.TestSuiteBasePlugin@2c046254, org.gradle.api.plugins.JvmTestSuitePlugin@69bfc512, org.gradle.api.plugins.JavaPlugin@474d3691, org.gradle.api.distribution.plugins.DistributionPlugin@742d12be, org.gradle.api.plugins.ApplicationPlugin@235f6af8, org.gradle.plugins.ide.eclipse.EclipsePlugin@312f97e8, org.gradle.api.publish.plugins.PublishingPlugin@1a77951c, org.gradle.api.publish.maven.plugins.MavenPublishPlugin@41900840, com.github.spotbugs.snom.SpotBugsBasePlugin@16417121, com.github.spotbugs.snom.SpotBugsPlugin@7beaa400, org.gradle.api.plugins.ProjectReportsPlugin@6faf7b80, org.gradle.testing.jacoco.plugins.JacocoPlugin@3cdbc8e1, org.ysb33r.gradle.doxygen.DoxygenPlugin@3621208d, org.jbake.gradle.JBakePlugin@1abfebdb, org.unbrokendome.gradle.plugins.testsets.TestSetsPlugin@21f6abf]
+processOperations: org.gradle.process.internal.DefaultExecActionFactory$DecoratingExecActionFactory@1487fa4a
+processResources: task ':processResources'
+processTestResources: task ':processTestResources'
+project: root project 'ACMclassifier'
+projectConfigurator: org.gradle.api.internal.project.BuildOperationCrossProjectConfigurator@3270b299
+projectDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier
+projectEvaluationBroadcaster: ProjectEvaluationListener broadcast
+projectEvaluator: org.gradle.configuration.project.LifecycleProjectEvaluator@67ecd813
+projectPath: :
+projectReport: task ':projectReport'
+projectReportDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build/reports/project
+projectReportDirName: project
+projects: [root project 'ACMclassifier']
+properties: {...}
+propertyReport: task ':propertyReport'
+providers: org.gradle.api.internal.provider.DefaultProviderFactory_Decorated@5ef758dd
+publicType: org.gradle.api.plugins.BasePluginConvention
+publishing: extension 'publishing'
+reporting: extension 'reporting'
+reports: task ':reports'
+reportsDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build/reports
+repositories: repository container
+resources: org.gradle.api.internal.resources.DefaultResourceHandler@7589ace3
+rootDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier
+rootProject: root project 'ACMclassifier'
+rootScript: false
+run: task ':run'
+script: false
+scriptHandlerFactory: org.gradle.api.internal.initialization.DefaultScriptHandlerFactory@42da3cb1
+scriptPluginFactory: org.gradle.configuration.ScriptPluginFactorySelector@43f748b9
+serviceRegistryFactory: org.gradle.internal.service.scopes.ProjectScopeServices$$Lambda$1580/1920366840@35452c6
+services: ProjectScopeServices
+setupWebsite: task ':setupWebsite'
+sourceCompatibility: 1.8
+sourceSets: SourceSet container
+spotbugs: extension 'spotbugs'
+spotbugsMain: task ':spotbugsMain'
+spotbugsTest: task ':spotbugsTest'
+standardOutputCapture: org.gradle.internal.logging.services.DefaultLoggingManager@2a9c3c74
+state: project state 'EXECUTED'
+status: integration
+subprojects: []
+targetCompatibility: 1.8
+taskReport: task ':taskReport'
+taskThatOwnsThisObject: null
+tasks: task set
+test: task ':test'
+testClasses: task ':testClasses'
+testJar: task ':testJar'
+testReportDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build/reports/tests
+testReportDirName: tests
+testResultsDir: /Users/nataliemohun/Documents/GitHub/ACMclassifier/build/test-results
+testResultsDirName: test-results
+testSets: TestSetBase container
+testing: extension 'testing'
+updateGitHubPages: task ':updateGitHubPages'
+version: unspecified

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StopWordList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">StopWordList.java</span></div><h1>StopWordList.java</h1><pre class="source lang-java linenums">
+package edu.odu.cs.cs350.acmClassifier;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class StopWordList implements Cloneable {
+<span class="fc" id="L11">    private List&lt;String&gt; stopWords = new ArrayList&lt;String&gt;();</span>
+
+<span class="fc" id="L13">    public StopWordList(File file) throws FileNotFoundException, IOException {</span>
+<span class="fc" id="L14">        Scanner s = new Scanner(file, &quot;UTF-8&quot;);</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">         while (s.hasNextLine()) {</span>
+<span class="fc" id="L16">            stopWords.add(s.nextLine());</span>
+
+        }
+<span class="fc" id="L19">        s.close();</span>
+<span class="fc" id="L20">    }</span>
+
+    public Object clone() {
+<span class="nc" id="L23">        StopWordList sl = null;</span>
+        try {
+<span class="nc" id="L25">            sl = (StopWordList) super.clone();</span>
+<span class="nc" id="L26">            sl.stopWords = new ArrayList&lt;String&gt;(this.stopWords);</span>
+<span class="nc" id="L27">            return sl;</span>
+
+<span class="nc" id="L29">        } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L30">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L32">        return null;</span>
+    }
+
+    public boolean contains(String word) {
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        for (int i = 0; i &lt; this.stopWords.size(); i++) {</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (this.stopWords.get(i).equalsIgnoreCase(word)) {</span>
+<span class="fc" id="L38">                return true;</span>
+            }
+        }
+<span class="nc" id="L41">        return false;</span>
+    }
+
+    public int size() {
+<span class="fc" id="L45">        return this.stopWords.size();</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

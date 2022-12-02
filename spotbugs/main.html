@@ -1,0 +1,415 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		ACMclassifier (spotbugsMain)</p>
+      <p>SpotBugs version: 4.7.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/ACMClass.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/StopWordList.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/DocumentReader.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/Trainer.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/TextFileReader.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/Document.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/ACMClass$Classification.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/Main.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/ACMClass$1.class</li>
+         <li>/Users/nataliemohun/Documents/GitHub/ACMclassifier/build/classes/java/main/edu/odu/cs/cs350/acmClassifier/Parser.class</li>
+         <li>ass</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>375 lines of code analyzed,
+	in 10 classes, 
+	in 1 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">9</td>
+            <td align="right">24.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>9</b>
+            </td>
+            <td align="right">
+               <b>24.00</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">4</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>9</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e137');">
+            <td>
+               <span class="priority-2">CN</span>
+            </td>
+            <td>edu.odu.cs.cs350.acmClassifier.ACMClass.clone() does not call super.clone()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e137" style="display: none;">
+                  <a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.ACMClass<br/>In method edu.odu.cs.cs350.acmClassifier.ACMClass.clone()<br/>At ACMClass.java:[line 51]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e161');">
+            <td>
+               <span class="priority-2">CN</span>
+            </td>
+            <td>edu.odu.cs.cs350.acmClassifier.Document.clone() does not call super.clone()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e161" style="display: none;">
+                  <a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Document<br/>In method edu.odu.cs.cs350.acmClassifier.Document.clone()<br/>At Document.java:[line 82]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e214');">
+            <td>
+               <span class="priority-2">CN</span>
+            </td>
+            <td>edu.odu.cs.cs350.acmClassifier.Trainer.clone() does not call super.clone()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e214" style="display: none;">
+                  <a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Trainer<br/>In method edu.odu.cs.cs350.acmClassifier.Trainer.clone()<br/>At Trainer.java:[line 103]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e202');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The method name edu.odu.cs.cs350.acmClassifier.Parser.Parse() doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e202" style="display: none;">
+                  <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Parser<br/>In method edu.odu.cs.cs350.acmClassifier.Parser.Parse()<br/>At Parser.java:[line 19]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e226');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>edu.odu.cs.cs350.acmClassifier.Trainer.loadState(String) may expose internal representation by returning Trainer.svm</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e226" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Trainer<br/>In method edu.odu.cs.cs350.acmClassifier.Trainer.loadState(String)<br/>Field edu.odu.cs.cs350.acmClassifier.Trainer.svm<br/>At Trainer.java:[line 254]<br/>Another occurrence at Trainer.java:[line 262]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e244');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>edu.odu.cs.cs350.acmClassifier.Trainer.svm() may expose internal representation by returning Trainer.svm</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e244" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Trainer<br/>In method edu.odu.cs.cs350.acmClassifier.Trainer.svm()<br/>Field edu.odu.cs.cs350.acmClassifier.Trainer.svm<br/>At Trainer.java:[line 112]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e173');">
+            <td>
+               <span class="priority-2">Dm</span>
+            </td>
+            <td>new edu.odu.cs.cs350.acmClassifier.Document() invokes inefficient new String(String) constructor</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e173" style="display: none;">
+                  <a href="#DM_STRING_CTOR">Bug type DM_STRING_CTOR (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Document<br/>In method new edu.odu.cs.cs350.acmClassifier.Document()<br/>At Document.java:[line 62]<br/>Another occurrence at Document.java:[line 63]<br/>Another occurrence at Document.java:[line 64]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e189');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: edu.odu.cs.cs350.acmClassifier.Main.ArrayList</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e189" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.Main<br/>Field edu.odu.cs.cs350.acmClassifier.Main.ArrayList<br/>In Main.java</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e149');">
+            <td>
+               <span class="priority-2">SF</span>
+            </td>
+            <td>Switch statement found in new edu.odu.cs.cs350.acmClassifier.ACMClass(String) where default case is missing</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e149" style="display: none;">
+                  <a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.acmClassifier.ACMClass<br/>In method new edu.odu.cs.cs350.acmClassifier.ACMClass(String)<br/>At ACMClass.java:[lines 62-94]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="CN_IDIOM_NO_SUPER_CALL">CN_IDIOM_NO_SUPER_CALL: clone method does not call super.clone()</a>
+      </h2>
+
+<p> This non-final class defines a clone() method that does not call super.clone().
+If this class ("<i>A</i>") is extended by a subclass ("<i>B</i>"),
+and the subclass <i>B</i> calls super.clone(), then it is likely that
+<i>B</i>'s clone() method will return an object of type <i>A</i>,
+which violates the standard contract for clone().</p>
+
+<p> If all clone() methods call super.clone(), then they are guaranteed
+to use Object.clone(), which always returns an object of the correct type.</p>
+
+    <h2>
+         <a name="DM_STRING_CTOR">DM_STRING_CTOR: Method invokes inefficient new String(String) constructor</a>
+      </h2>
+
+  <p> Using the <code>java.lang.String(String)</code> constructor wastes memory
+  because the object so constructed will be functionally indistinguishable
+  from the <code>String</code> passed as a parameter.&nbsp; Just use the
+  argument <code>String</code> directly.</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="NM_METHOD_NAMING_CONVENTION">NM_METHOD_NAMING_CONVENTION: Method names should start with a lower case letter</a>
+      </h2>
+
+  <p>
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of each internal word capitalized.
+</p>
+
+    <h2>
+         <a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+      </h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    <h2>
+         <a name="UUF_UNUSED_FIELD">UUF_UNUSED_FIELD: Unused field</a>
+      </h2>
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    </body>
+</html>

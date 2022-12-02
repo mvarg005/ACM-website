@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DocumentReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">DocumentReader.java</span></div><h1>DocumentReader.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350.acmClassifier;
+
+//All the File handlers
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+//All the Tika Components
+import org.apache.tika.exception.TikaException;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.parser.ParseContext;
+import org.apache.tika.parser.pdf.PDFParser;
+import org.apache.tika.sax.BodyContentHandler;
+
+//Exception Handling
+import org.xml.sax.SAXException;
+
+<span class="fc" id="L19">public class DocumentReader {</span>
+
+    // handler and contexts
+<span class="fc" id="L22">    BodyContentHandler handler = new BodyContentHandler(-1);</span>
+<span class="fc" id="L23">    Metadata metadata = new Metadata();</span>
+<span class="fc" id="L24">    ParseContext pcontext = new ParseContext();</span>
+    FileInputStream inputstream;
+<span class="fc" id="L26">    PDFParser pdfparser = new PDFParser();</span>
+
+    // Locates the filepath as inputted pdf file and opens the context and extracts
+    // the pdf file
+    public void importPDF(String filepath) throws FileNotFoundException {
+<span class="fc" id="L31">        inputstream = new FileInputStream(new File(filepath));</span>
+        try {
+<span class="fc" id="L33">            pdfparser.parse(inputstream, handler, metadata, pcontext);</span>
+            
+<span class="fc" id="L35">            System.out.println(handler.toString());</span>
+<span class="nc" id="L36">        } catch (IOException e) {</span>
+<span class="nc" id="L37">            e.printStackTrace();</span>
+<span class="nc" id="L38">        } catch (SAXException e) {</span>
+<span class="nc" id="L39">            e.printStackTrace();</span>
+<span class="nc" id="L40">        } catch (TikaException e) {</span>
+<span class="nc" id="L41">            e.printStackTrace();</span>
+<span class="pc" id="L42">        }</span>
+
+<span class="fc" id="L44">    }</span>
+
+    public String getDocumentText() {
+<span class="fc" id="L47">        return handler.toString();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

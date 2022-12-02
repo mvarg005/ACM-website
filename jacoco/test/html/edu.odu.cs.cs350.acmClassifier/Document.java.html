@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Document.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">Document.java</span></div><h1>Document.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350.acmClassifier;
+
+import java.util.ArrayList;
+
+/**
+ * A generic document, containing all the information Parser and Trainer need.
+ */
+public class Document implements Cloneable {
+    /**
+     * 
+     * The raw text of the document.
+     */
+    public String rawText;
+
+    /**
+     * The tokenized, unpruned text of the document.
+     */
+    public ArrayList&lt;String&gt; tokenizedText;
+
+    /**
+     * An array of how many times each word in the document appears.
+     */
+    public ArrayList&lt;Integer&gt; wordCounts;
+
+    /**
+     * An array of normalized word counts.
+     * Normalization has two steps:
+     * 1. If word count is greater than 4, set normalized word count to 1.
+     * Otherwise, set to 0.
+     * 2. Multiply normalized word count by the inverse document frequency.
+     */
+    public ArrayList&lt;Double&gt; normalizedWordCounts;
+
+    /**
+     * The classification of the document.
+     */
+    public ACMClass classification;
+
+    /**
+     * Construct an empty, unclassified Document.
+     */
+<span class="fc" id="L42">    public Document() {</span>
+<span class="fc" id="L43">        rawText = new String(&quot;&quot;);</span>
+<span class="fc" id="L44">        tokenizedText = new ArrayList&lt;String&gt;();</span>
+<span class="fc" id="L45">        wordCounts = new ArrayList&lt;Integer&gt;();</span>
+<span class="fc" id="L46">        normalizedWordCounts = new ArrayList&lt;Double&gt;();</span>
+<span class="fc" id="L47">        classification = new ACMClass();</span>
+<span class="fc" id="L48">    }</span>
+
+    /**
+     * Copy constructor.
+     * 
+     * @param doc the document to copy from
+     */
+<span class="nc" id="L55">    public Document(Document doc) {</span>
+        // TODO
+<span class="nc" id="L57">    }</span>
+
+    @Override
+    public Document clone() {
+<span class="nc" id="L61">        return new Document(this);</span>
+    }
+
+    @Override
+    public String toString() {
+        // TODO
+<span class="nc" id="L67">        return &quot;I am a Document&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ACMClass.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">ACMClass.java</span></div><h1>ACMClass.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350.acmClassifier;
+
+import java.util.ArrayList;
+
+/** 
+ * A collection of ACM classifications for a single document.
+ */
+public class ACMClass implements Cloneable {
+    /**
+     * An enum of the various ACM classifications.
+     */
+<span class="fc" id="L12">    enum Classification {</span>
+<span class="fc" id="L13">        GEN_LIT,                    //A. General Literature</span>
+<span class="fc" id="L14">        HARDWARE,                   //B. Hardware</span>
+<span class="fc" id="L15">        COMP_SYS_ORG,               //C. Computer systems organization</span>
+<span class="fc" id="L16">        SOFTWARE,                   //D. Software</span>
+<span class="fc" id="L17">        DATA,                       //E. Data</span>
+<span class="fc" id="L18">        THEORY_OF_COMP,             //F. Theory of computation</span>
+<span class="fc" id="L19">        MATH_OF_COMP,               //G. Mathematics of computing</span>
+<span class="fc" id="L20">        INFO_SYS,                   //H. Information systems</span>
+<span class="fc" id="L21">        COMP_AND_METHODOLOGIES,     //I. Computing and methodologies</span>
+<span class="fc" id="L22">        COMP_APPLICATIONS,          //J. Computer Applications</span>
+<span class="fc" id="L23">        COMP_MILIEUX                //K. Computing Milieux</span>
+    }
+
+    /** 
+     * The collection of classifications.
+     * If the size of this is 0, then &quot;(no classes)&quot; should be displayed when toString is called.
+     */
+    private ArrayList&lt;Classification&gt; classifications;
+
+    /** 
+     * Construct an ACMClass with no classifications.
+     */
+<span class="fc" id="L35">    public ACMClass() {</span>
+<span class="fc" id="L36">        classifications = new ArrayList&lt;Classification&gt;();</span>
+<span class="fc" id="L37">    }</span>
+
+    /**
+     * Copy constructor.
+     * 
+     * @param acm the ACMClass to copy from
+     */
+<span class="nc" id="L44">    public ACMClass(ACMClass acm) {</span>
+        //TODO
+<span class="nc" id="L46">    }</span>
+    
+    @Override
+    public ACMClass clone()
+    {
+<span class="nc" id="L51">    	return new ACMClass(this);</span>
+    }
+
+    /**
+     * Construct an ACMClass with classifications according to the given string.
+     * 
+     * @param str list of classifications, each represented by a letter A-K
+     */
+<span class="fc" id="L59">    public ACMClass(String str) {</span>
+<span class="fc" id="L60">        classifications = new ArrayList&lt;Classification&gt;();</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        for (int i = 0; i &lt; str.length(); i++) {</span>
+<span class="pc bpc" id="L62" title="1 of 12 branches missed.">            switch (str.charAt(i)) {</span>
+                case 'A':
+<span class="fc" id="L64">                    classifications.add(Classification.GEN_LIT);</span>
+<span class="fc" id="L65">                    break;</span>
+                case 'B':
+<span class="fc" id="L67">                    classifications.add(Classification.HARDWARE);</span>
+<span class="fc" id="L68">                    break;</span>
+                case 'C':
+<span class="fc" id="L70">                    classifications.add(Classification.COMP_SYS_ORG);</span>
+<span class="fc" id="L71">                    break;</span>
+                case 'D':
+<span class="fc" id="L73">                    classifications.add(Classification.SOFTWARE);</span>
+<span class="fc" id="L74">                    break;</span>
+                case 'E':
+<span class="fc" id="L76">                    classifications.add(Classification.DATA);</span>
+<span class="fc" id="L77">                    break;</span>
+                case 'F':
+<span class="fc" id="L79">                    classifications.add(Classification.THEORY_OF_COMP);</span>
+<span class="fc" id="L80">                    break;</span>
+                case 'G':
+<span class="fc" id="L82">                    classifications.add(Classification.MATH_OF_COMP);</span>
+<span class="fc" id="L83">                    break;</span>
+                case 'H':
+<span class="fc" id="L85">                    classifications.add(Classification.INFO_SYS);</span>
+<span class="fc" id="L86">                    break;</span>
+                case 'I':
+<span class="fc" id="L88">                    classifications.add(Classification.COMP_AND_METHODOLOGIES);</span>
+<span class="fc" id="L89">                    break;</span>
+                case 'J':
+<span class="fc" id="L91">                    classifications.add(Classification.COMP_APPLICATIONS);</span>
+<span class="fc" id="L92">                    break;</span>
+                case 'K':
+<span class="fc" id="L94">                    classifications.add(Classification.COMP_MILIEUX);</span>
+                    break;
+            }
+        }
+<span class="fc" id="L98">    }</span>
+
+    /**
+     * Get a single classification.
+     * 
+     * @param index the index of the classification
+     * @return a classification
+     */
+    public Classification get(int index) {
+<span class="fc" id="L107">        return classifications.get(index);</span>
+    }
+
+    /**
+     * Get a single classification, represented as a letter A-L.
+     * 
+     * @param index the index of the classification
+     * @return a classification letter
+     */
+    public String getLetter(int index) {
+<span class="fc" id="L117">        Classification c = classifications.get(index);</span>
+<span class="pc bpc" id="L118" title="8 of 12 branches missed.">        switch (c) {</span>
+            case GEN_LIT:
+<span class="fc" id="L120">                return &quot;A&quot;;</span>
+            case HARDWARE:
+<span class="nc" id="L122">                return &quot;B&quot;;</span>
+            case COMP_SYS_ORG:
+<span class="fc" id="L124">                return &quot;C&quot;;</span>
+            case SOFTWARE:
+<span class="fc" id="L126">                return &quot;D&quot;;</span>
+            case DATA:
+<span class="fc" id="L128">                return &quot;E&quot;;</span>
+            case THEORY_OF_COMP:
+<span class="nc" id="L130">                return &quot;F&quot;;</span>
+            case MATH_OF_COMP:
+<span class="nc" id="L132">                return &quot;G&quot;;</span>
+            case INFO_SYS:
+<span class="nc" id="L134">                return &quot;H&quot;;</span>
+            case COMP_AND_METHODOLOGIES:
+<span class="nc" id="L136">                return &quot;I&quot;;</span>
+            case COMP_APPLICATIONS:
+<span class="nc" id="L138">                return &quot;J&quot;;</span>
+            case COMP_MILIEUX:
+<span class="nc" id="L140">                return &quot;K&quot;;</span>
+            default:
+                //Should never happen
+<span class="nc" id="L143">                return &quot;L&quot;;</span>
+        }
+    }
+
+    /**
+     * Get the amount of classifications.
+     * 
+     * @return the size of the classifications array
+     */
+    public int size() {
+<span class="fc" id="L153">        return classifications.size();</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc bnc" id="L158" title="All 2 branches missed.">        if (classifications.size() == 0) {</span>
+<span class="nc" id="L159">            return &quot;(no classes)&quot;;</span>
+        }
+
+<span class="nc" id="L162">        StringBuffer output = new StringBuffer();</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">        for (int i = 0; i &lt; classifications.size(); i++) {</span>
+<span class="nc" id="L164">            output.append(getLetter(i));</span>
+        }
+<span class="nc" id="L166">        return output.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

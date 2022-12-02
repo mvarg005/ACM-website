@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TextFileReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">TextFileReader.java</span></div><h1>TextFileReader.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350.acmClassifier;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+import org.apache.tika.exception.TikaException;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.parser.ParseContext;
+import org.apache.tika.sax.BodyContentHandler;
+import org.apache.tika.parser.txt.TXTParser;
+
+import org.xml.sax.SAXException;
+
+<span class="nc" id="L16">public class TextFileReader {</span>
+<span class="nc" id="L17">   BodyContentHandler handler = new BodyContentHandler();</span>
+<span class="nc" id="L18">   Metadata metadata = new Metadata();</span>
+   FileInputStream inputstream;
+<span class="nc" id="L20">   ParseContext pcontext = new ParseContext();</span>
+<span class="nc" id="L21">   TXTParser TexTParser = new TXTParser();</span>
+
+   public void textOutput(String filepath) throws Exception {
+<span class="nc" id="L24">      inputstream = new FileInputStream(new File(filepath));</span>
+
+<span class="nc" id="L26">      TexTParser.parse(inputstream, handler, metadata, pcontext);</span>
+<span class="nc" id="L27">      System.out.println(&quot;Contents of the document:&quot; + handler.toString());</span>
+
+<span class="nc" id="L29">      System.out.println(&quot;Metadata of the document:&quot;);</span>
+<span class="nc" id="L30">      String[] metadataNames = metadata.names();</span>
+
+<span class="nc bnc" id="L32" title="All 2 branches missed.">      for (String name : metadataNames) {</span>
+<span class="nc" id="L33">         System.out.println(name + &quot; : &quot; + metadata.get(name));</span>
+      }
+<span class="nc" id="L35">   }</span>
+   /*
+    * public String getFileText() {
+    * return &quot;Text Content:\n&quot; + handler.toString();
+    * }
+    */
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

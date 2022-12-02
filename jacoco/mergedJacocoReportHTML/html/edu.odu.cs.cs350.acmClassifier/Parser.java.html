@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Parser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">Parser.java</span></div><h1>Parser.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350.acmClassifier;
+//import java.util.ArrayList;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+<span class="fc" id="L10">public class Parser {</span>
+
+    
+
+    /**
+     * 
+     **/
+    public void Parse(){
+        //using apache tika read in file and output text
+<span class="nc" id="L19">    }</span>
+
+    
+    
+    public void loadRawText(Document d)
+    {
+<span class="fc" id="L25">        DocumentReader d_reader = new DocumentReader();</span>
+        try {
+<span class="fc" id="L27">            d_reader.importPDF(d.filePath);</span>
+<span class="nc" id="L28">        } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L29">            e.printStackTrace();</span>
+<span class="fc" id="L30">        }</span>
+
+<span class="fc" id="L32">        d.rawText=d_reader.getDocumentText();</span>
+<span class="fc" id="L33">    }</span>
+
+
+
+    /**
+     * @param d a document
+     */
+    public void loadToken(Document d)
+    {
+        //ensure raw text has been loaded if null
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if(d.rawText ==null)</span>
+<span class="nc" id="L44">            this.loadRawText(d);</span>
+
+<span class="fc" id="L46">        String words = d.rawText.replaceAll(&quot;[^a-zA-Z ]&quot;, &quot;&quot;).toLowerCase();</span>
+        
+
+        
+        //Split raw text 
+
+<span class="fc" id="L52">        d.tokenizedText= new ArrayList&lt;String&gt;(Arrays.asList(words.split(&quot; &quot;)));</span>
+
+        
+<span class="fc" id="L55">    }</span>
+
+
+    public void updateWordCounts(Document d)
+    {
+        //ensure load token has been called
+<span class="fc" id="L61">        d.wordFreqencyMap = new HashMap&lt;String,Integer&gt;();</span>
+
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        for (String i : d.tokenizedText) {</span>
+<span class="fc" id="L64">            Integer j = d.wordFreqencyMap.get(i);</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">            if (j==null)</span>
+            {
+<span class="fc" id="L67">                d.wordFreqencyMap.put(i,1);</span>
+            }
+            else
+            {
+<span class="fc" id="L71">                d.wordFreqencyMap.put(i, d.wordFreqencyMap.get(i)+1);</span>
+            }
+<span class="fc" id="L73">        }</span>
+       
+        
+
+<span class="fc" id="L77">    }</span>
+    /**
+     * @param d d, a document
+     */
+    public void loadRawSignature(Document d)
+    {
+        //make sure update word counts has been called 
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">        if (d.wordFreqencyMap==null)</span>
+<span class="nc" id="L85">            this.updateWordCounts(d);</span>
+        //iterate over each key and load value into the word count list
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        for (HashMap.Entry&lt;String,Integer&gt; word : d.wordFreqencyMap.entrySet())</span>
+        {
+<span class="fc" id="L89">            d.wordCounts.add(word.getValue());</span>
+<span class="fc" id="L90">        }</span>
+<span class="fc" id="L91">    }</span>
+
+   
+
+    /**
+     * @param d  a document
+     * @return the document'snraw signature cotaining each word count
+     */
+    public ArrayList&lt;Integer&gt; getRawSignature(Document d)
+    {
+        //call all of document's functions to set up raw signature list, wordcounts
+<span class="fc" id="L102">        this.loadRawSignature(d);</span>
+<span class="fc" id="L103">        return d.wordCounts;</span>
+    }
+
+
+    public static void normalize(Document d){
+<span class="fc bfc" id="L108" title="All 2 branches covered.">        for (int i = 0; i &lt; d.wordCounts.size(); i++){</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">            if (d.wordCounts.get(i) &gt;= 4){</span>
+<span class="fc" id="L110">                d.normalizedWordCounts.add(1.0);</span>
+            }   
+            else{
+<span class="fc" id="L113">                d.normalizedWordCounts.add(0.0);</span>
+            }
+        }
+<span class="fc" id="L116">    }</span>
+
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

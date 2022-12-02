@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,ACMClass.Classification,0,114,0,0,0,12,0,1,0,1
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,Trainer,47,487,1,25,13,86,2,20,1,8
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,Parser,10,145,2,12,5,30,3,12,1,7
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,Main,15,0,0,0,5,0,2,0,2,0
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,DocumentReader,11,55,0,0,6,11,0,3,0,3
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,Document,14,55,1,1,6,13,5,2,4,2
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,ACMClass,52,122,13,17,17,37,14,19,3,5
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,TextFileReader,94,0,2,0,13,0,3,0,2,0
+ACMclassifier,edu.odu.cs.cs350.acmClassifier,StopWordList,22,49,1,5,8,11,2,5,1,3

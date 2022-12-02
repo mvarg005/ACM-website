@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Parser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ACMclassifier</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350.acmClassifier</a> &gt; <span class="el_source">Parser.java</span></div><h1>Parser.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350.acmClassifier;
+//import java.util.ArrayList;
+
+<span class="nc" id="L4">public class Parser {</span>
+
+    /**
+     * 
+     **/
+    public void Parse(){
+        //using apache tika read in file and output text
+<span class="nc" id="L11">    }</span>
+
+    //tokenize function(s)
+    
+    //termWeighting function(s)
+
+    /**
+     * 
+     * //param document object 
+     **/
+    //public ArrayList&lt;Integer&gt; normalize(ArrayList&lt;Integer&gt; signatures){
+    /*
+    public static ArrayList&lt;Integer &gt; normalize(Document d){
+
+        for (int i = 0; i &lt; d.wordCounts.size(); i++) {
+            if (d.wordCounts.get(i) &gt;= 4){
+                d.wordCounts.set(i, 1);
+            }   
+            else{
+                d.wordCounts.set(i, 0);
+            }
+        }
+        return d.wordCounts;
+    }
+    */
+    public static void normalize(Document d){
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        for (int i = 0; i &lt; d.wordCounts.size(); i++){</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">            if (d.wordCounts.get(i) &gt;= 4){</span>
+<span class="fc" id="L39">                d.normalizedWordCounts.add(1.0);</span>
+            }   
+            else{
+<span class="fc" id="L42">                d.normalizedWordCounts.add(0.0);</span>
+            }
+        }
+<span class="fc" id="L45">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
